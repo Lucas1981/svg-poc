@@ -1,0 +1,12 @@
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.svg {
+  margin-left: calc(50vw - 320px);
+  margin-top: calc(50vh - 240px);
+  width: 640px;
+  height: 480px;
+}
