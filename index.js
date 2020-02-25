@@ -5,7 +5,6 @@
   const degreesToRadians = Math.PI / 180;
   const width = 640;
   const height = 480;
-  const createSvgElement = (name) => document.createElementNS("http://www.w3.org/2000/svg", name);
 
   class Clock {
     constructor() {
@@ -19,13 +18,17 @@
 
   class Svg {
     constructor(id) {
-      this.svg = createSvgElement("svg");
+      this.svg = Svg.createSvgElement("svg");
       this.svg.setAttribute('width', width);
       this.svg.setAttribute('height', height);
       document.getElementById(id).appendChild(this.svg);
     }
 
     getSvg() { return this.svg; }
+
+    static createSvgElement(name) {
+      return document.createElementNS("http://www.w3.org/2000/svg", name);
+    }
   }
 
   class Planet {
@@ -40,7 +43,7 @@
       this.reach = reach;
       this.waitTime = waitTime;
       this.lastUpdate = global.clock.getTime();
-      this.representation = createSvgElement('circle');
+      this.representation = Svg.createSvgElement('circle');
       this.initiate();
     }
 
