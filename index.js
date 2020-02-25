@@ -77,7 +77,7 @@ class Planet {
   ]
 
   function main() {
-    for (planet of galaxy) {
+    for (const planet of galaxy) {
       planet.update();
       planet.draw();
     }
