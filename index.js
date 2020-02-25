@@ -26,6 +26,10 @@
 
     getSvg() { return this.svg; }
 
+    append(child) {
+      this.svg.appendChild(child);
+    }
+
     static createElement(name) {
       return document.createElementNS("http://www.w3.org/2000/svg", name);
     }
@@ -52,7 +56,7 @@
       this.representation.setAttribute('cy', this.y)
       this.representation.setAttribute('r', this.r)
       this.representation.setAttribute('fill', this.color);
-      global.svg.getSvg().appendChild(this.representation);
+      global.svg.append(this.representation);
     }
 
     update() {
